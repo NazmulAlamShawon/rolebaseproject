@@ -11,7 +11,7 @@ const Nav = () => {
                   <Link href="/CreateUser"> Create User</Link>
                   <Link href="/ClientMember"> Client Member</Link>
                   <Link href="/Member">Member</Link>
-                  <Link href="/Public">Home</Link>
+                  <Link href="/Public"> Public</Link>
                   
 
               </div>
