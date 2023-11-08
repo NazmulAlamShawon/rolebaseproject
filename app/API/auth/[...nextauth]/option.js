@@ -4,6 +4,7 @@ import GoogleProvider from "next-auth/providers/google"
 export const options = {
 
     provider: [
+        //  github provider
         GithubProvider({
             profile(profile) {
                 console.log("profile github", profile);
@@ -16,10 +17,11 @@ export const options = {
                 return {
                     ...profile,
                     role:userRole,
-                }
-
-            }
-           
+                }                      
+            },
+            // clint id
+             clientId: process.env.GITHUB_ID,
+             clientSecret: process.env.GITHUB_Secret,
         }),
         GoogleProvider({
             profile(profile) {
@@ -32,11 +34,28 @@ export const options = {
 
                 return {
                     ...profile,
+                    id: profile.sub,
                     role:userRole,
                 }
 
-            }
-           
+            },
+             // clint id
+             clientId: process.env.GOOGLE_ID,
+             clientSecret: process.env.GOOGLE_Secret,
         }),
-    ]
-}
+    ],
+
+   callbacks:{
+    
+      async jwt({token,user}){
+        if (user) token.role = user.role
+        return token
+      },
+
+      async session({session,token}){
+        if(session?.user)session.user.role = token.role
+        return session
+      }
+   }
+//    secret: process.env.JWT_SECRET,
+};
