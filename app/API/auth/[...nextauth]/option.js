@@ -21,6 +21,22 @@ export const options = {
             }
            
         }),
-        
+        GoogleProvider({
+            profile(profile) {
+                console.log("profile google", profile);
+
+                let userRole = "Google User";
+                if(profile?.email== "shawonkst15@gmail.com"){
+                    userRole = "admin";
+                }
+
+                return {
+                    ...profile,
+                    role:userRole,
+                }
+
+            }
+           
+        }),
     ]
 }
