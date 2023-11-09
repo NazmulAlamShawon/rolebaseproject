@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 export const options = {
 
-    provider: [
+    providers: [
         //  github provider
         GithubProvider({
             profile(profile) {
@@ -44,6 +44,9 @@ export const options = {
              clientSecret: process.env.GOOGLE_Secret,
         }),
     ],
+    pages:{
+        signIn : "/signin",
+    },
 
    callbacks:{
     
