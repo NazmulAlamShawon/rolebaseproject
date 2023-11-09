@@ -45,7 +45,7 @@ export const options = {
         }),
     ],
     pages:{
-        signIn : "/signin",
+        signIn : "/signin"
     },
 
    callbacks:{
