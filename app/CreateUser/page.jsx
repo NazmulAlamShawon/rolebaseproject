@@ -4,8 +4,8 @@ const CreateUser = () => {
   return (
     <div>
       <h1> Create User</h1>
-      <div> </div>
-      <div> </div>
+      <div> test</div>
+      <div> test</div>
     
     </div>
   )

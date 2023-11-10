@@ -2,7 +2,10 @@ import React from 'react'
 
 const Member = () => {
   return (
-    <div> <h1> Member service Session</h1></div>
+    <div>
+       <h1> Member service Session</h1>
+        <p>member list</p>
+    </div>
   )
 }
 
